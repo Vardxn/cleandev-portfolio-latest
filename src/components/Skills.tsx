@@ -39,7 +39,7 @@ const Skills = () => {
             My <span>Skills</span>
           </h2>
           <p className="skills-subtitle">
-            Expertise across modern web technologies and cloud platforms
+            Well-defined skill sets across frontend, backend, cloud, and core CS
           </p>
         </motion.div>
 
