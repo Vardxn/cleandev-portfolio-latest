@@ -11,7 +11,7 @@ export interface SkillCategory {
 
 export const skillsData: SkillCategory[] = [
   {
-    category: "Frontend Engineering",
+    category: "Frontend",
     skills: [
       { name: "React", proficiency: 95, color: "#61dafb" },
       { name: "TypeScript", proficiency: 90, color: "#3178c6" },
@@ -23,7 +23,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    category: "Backend & APIs",
+    category: "Backend",
     skills: [
       { name: "Node.js", proficiency: 92, color: "#68a063" },
       { name: "Express.js", proficiency: 90, color: "#000000" },
@@ -34,7 +34,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    category: "Cloud, DevOps & Tools",
+    category: "Cloud",
     skills: [
       { name: "Git & GitHub", proficiency: 94, color: "#f05033" },
       { name: "Vercel Deployments", proficiency: 90, color: "#ffffff" },
@@ -45,7 +45,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    category: "Languages & Core CS",
+    category: "Core CS",
     skills: [
       { name: "JavaScript", proficiency: 95, color: "#f7df1e" },
       { name: "Python", proficiency: 85, color: "#3776ab" },
