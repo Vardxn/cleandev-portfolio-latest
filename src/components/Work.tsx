@@ -53,23 +53,67 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {[...Array(3)].map((_value, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
 
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                      <h4>
+                        {index === 0 && "HealthEase"}
+                        {index === 1 && "Mohishree"}
+                        {index === 2 && "Wanderlust"}
+                        {index > 2 && "Project " + (index + 1)}
+                      </h4>
+                      <p>
+                        {index === 0 && "Healthcare Platform"}
+                        {index === 1 && "B2B Marketplace"}
+                        {index === 2 && "Travel Booking"}
+                        {index > 2 && "Web Application"}
+                      </p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                  <h4>Tech Stack</h4>
+                  <p>
+                    {index === 0 && "React, Node.js, MongoDB, OpenAI, JWT"}
+                    {index === 1 && "Next.js, PostgreSQL, REST APIs, JWT"}
+                    {index === 2 && "React, Express.js, PostgreSQL, Maps API"}
+                    {index > 2 && "MERN Stack"}
+                  </p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+                <WorkImage
+                  image={
+                    index === 0
+                      ? "/images/healthease-placeholder.svg"
+                      : index === 1
+                      ? "/images/mohishree-placeholder.svg"
+                      : index === 2
+                      ? "/images/wanderlust-placeholder.svg"
+                      : "/images/placeholder.webp"
+                  }
+                  alt={
+                    index === 0
+                      ? "HealthEase project preview"
+                      : index === 1
+                      ? "Mohishree project preview"
+                      : index === 2
+                      ? "Wanderlust project preview"
+                      : "Project preview"
+                  }
+                />
             </div>
           ))}
+
+            {/*
+              Future placeholders (hidden for now):
+              - Project 04
+              - Project 05
+              - Project 06
+
+              To show them again, change Array(3) back to Array(6)
+              and add your project details for indices 3, 4, and 5.
+            */}
         </div>
       </div>
     </div>

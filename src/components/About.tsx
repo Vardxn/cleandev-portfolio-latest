@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+            I'm a passionate Full Stack Web Developer and Software Engineering Intern with expertise in building scalable, cloud-native applications. Currently pursuing my Bachelor's in Information Technology at NIT Srinagar with a CGPA of 8+, I specialize in MERN stack development, microservices architecture, and AI-integrated solutions. I'm driven by creating seamless digital experiences that solve real-world problems through innovative technology and best coding practices.
         </p>
       </div>
     </div>
