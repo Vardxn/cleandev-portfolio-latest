@@ -15,7 +15,6 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "React", proficiency: 95, color: "#61dafb" },
       { name: "TypeScript", proficiency: 90, color: "#3178c6" },
-      { name: "Next.js", proficiency: 88, color: "#ffffff" },
       { name: "Tailwind CSS", proficiency: 92, color: "#06b6d4" },
       { name: "Framer Motion", proficiency: 86, color: "#ff4d9f" },
       { name: "GSAP Animations", proficiency: 88, color: "#88ce02" },
