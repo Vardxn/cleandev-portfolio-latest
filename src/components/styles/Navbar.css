@@ -26,7 +26,7 @@
 .header ul li {
   margin-left: 0px;
   letter-spacing: 1px;
-  color: #ccc;
+  color: var(--mutedText);
   font-weight: 600;
   cursor: pointer;
 }
@@ -62,7 +62,7 @@
     font-size: 14px;
   }
   .header ul li {
-    color: #eae5ec;
+    color: var(--mutedText);
   }
   .navbar-title {
     font-size: 16px;

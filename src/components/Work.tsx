@@ -6,6 +6,7 @@ import { caseStudies } from "../data/projectCaseStudies";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { MdOpenInNew } from "react-icons/md";
 
 gsap.registerPlugin(useGSAP);
 
@@ -89,6 +90,18 @@ const Work = () => {
                     {index === 1 && "Next.js, PostgreSQL, REST APIs, JWT"}
                     {index === 2 && "React, Express.js, PostgreSQL, Maps API"}
                     {index > 2 && "MERN Stack"}
+                  {caseStudies[index]?.liveLink && (
+                    <a
+                      href={caseStudies[index].liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-live-link"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <MdOpenInNew size={16} />
+                      View Live Project
+                    </a>
+                  )}
                   </p>
               </div>
                 <WorkImage

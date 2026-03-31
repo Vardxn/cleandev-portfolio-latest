@@ -18,12 +18,12 @@
   -moz-user-select: none;
 
   /* Light Mode (Default) */
-  --backgroundColor: #ffffff;
-  --textColor: #000000;
-  --accentColor: #c481ff;
-  --surfaceColor: #f5f5f5;
-  --borderColor: #e0e0e0;
-  --mutedText: #666666;
+  --backgroundColor: #fafafa;
+  --textColor: #1a1a1a;
+  --accentColor: #9d4edd;
+  --surfaceColor: #f0f0f0;
+  --borderColor: #e5e5e5;
+  --mutedText: #757575;
   --vh: 100vh;
   --vh: 100svh;
 }
@@ -79,7 +79,8 @@ main {
 body {
   margin: 0;
   height: auto;
-  background-color: #000;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
   flex-grow: 1;
   --cWidth: calc(100% - 30px);
   --cMaxWidth: 1920px;

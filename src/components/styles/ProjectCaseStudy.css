@@ -239,7 +239,7 @@
 
 .case-study-link.live {
   background: var(--accentColor);
-  color: #000;
+  color: var(--backgroundColor);
 }
 
 .case-study-link.live:hover {
@@ -254,7 +254,7 @@
 
 .case-study-link.github:hover {
   background: var(--accentColor);
-  color: #000;
+  color: var(--backgroundColor);
   transform: translateY(-2px);
 }
 
