@@ -4,7 +4,9 @@ import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import VardxnLogo from "./VardxnLogo";
+import ThemeToggle from "./ThemeToggle";
 import "./styles/Navbar.css";
+import "./styles/ThemeToggle.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
@@ -44,15 +46,18 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-            <VardxnLogo />
+          <VardxnLogo />
         </a>
-        <a
+        <div className="navbar-controls">
+          <ThemeToggle />
+          <a
             href="mailto:vardxn@gmail.com"
-          className="navbar-connect"
-          data-cursor="disable"
-        >
+            className="navbar-connect"
+            data-cursor="disable"
+          >
             vardxn@gmail.com
-        </a>
+          </a>
+        </div>
         <ul>
           <li>
             <a data-href="#about" href="#about">

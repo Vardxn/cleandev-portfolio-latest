@@ -1,5 +1,8 @@
+import { useState } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
+import ProjectCaseStudy from "./ProjectCaseStudy";
+import { caseStudies } from "../data/projectCaseStudies";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -7,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const Work = () => {
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<string | null>(null);
   useGSAP(() => {
   let translateX: number = 0;
 
@@ -54,7 +58,12 @@ const Work = () => {
         </h2>
         <div className="work-flex">
           {[...Array(3)].map((_value, index) => (
-            <div className="work-box" key={index}>
+            <div
+              className="work-box"
+              key={index}
+              onClick={() => setSelectedCaseStudy(caseStudies[index].id)}
+              style={{ cursor: "pointer" }}
+            >
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
@@ -116,6 +125,14 @@ const Work = () => {
             */}
         </div>
       </div>
+
+      {selectedCaseStudy && (
+        <ProjectCaseStudy
+          project={caseStudies.find((p) => p.id === selectedCaseStudy)!}
+          isOpen={!!selectedCaseStudy}
+          onClose={() => setSelectedCaseStudy(null)}
+        />
+      )}
     </div>
   );
 };

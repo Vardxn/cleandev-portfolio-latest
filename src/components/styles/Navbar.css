@@ -31,15 +31,22 @@
   cursor: pointer;
 }
 .navbar-connect {
-  position: absolute;
-  display: none;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   font-size: 15px;
   letter-spacing: 1px;
   font-weight: 500;
+  white-space: nowrap;
 }
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .navbar-title {
   font-weight: 700;
   font-size: 14px;
@@ -62,8 +69,8 @@
   }
 }
 @media only screen and (min-width: 900px) {
-  .navbar-connect {
-    display: block;
+  .navbar-controls {
+    display: flex !important;
   }
 }
 @media only screen and (min-width: 1200px) {
