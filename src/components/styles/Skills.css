@@ -39,11 +39,17 @@
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   margin-bottom: 60px;
   width: 100%;
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
 }
 
 .skill-category {
@@ -174,6 +180,10 @@
   }
 
   .skills-grid {
+    gap: 20px;
+  }
+
+  .skills-row {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -195,10 +205,6 @@
 @media (max-width: 480px) {
   .skills-header h2 {
     font-size: 32px;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
   }
 
   .skills-stats {
