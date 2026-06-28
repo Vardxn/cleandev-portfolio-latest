@@ -3,15 +3,7 @@ import { skillsData } from "../data/skills";
 import "./styles/Skills.css";
 
 const Skills = () => {
-  const skillRows = skillsData.reduce<typeof skillsData[]>((rows, category, index) => {
-    if (index % 2 === 0) {
-      rows.push([category]);
-    } else {
-      rows[rows.length - 1].push(category);
-    }
 
-    return rows;
-  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,51 +52,47 @@ const Skills = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {skillRows.map((row, rowIndex) => (
-            <div className="skills-row" key={`skills-row-${rowIndex}`}>
-              {row.map((category) => (
-                <motion.div key={category.category} className="skill-category">
-                  <h3 className="category-title">{category.category}</h3>
+          {skillsData.map((category) => (
+            <motion.div key={category.category} className="skill-category">
+              <h3 className="category-title">{category.category}</h3>
 
-                  <div className="skills-list">
-                    {category.skills.map((skill, idx) => (
-                      <motion.div
-                        key={`${category.category}-${skill.name}`}
-                        className="skill-item"
-                        variants={skillBarVariants}
-                        custom={idx}
+              <div className="skills-list">
+                {category.skills.map((skill, idx) => (
+                  <motion.div
+                    key={`${category.category}-${skill.name}`}
+                    className="skill-item"
+                    variants={skillBarVariants}
+                    custom={idx}
+                  >
+                    <div className="skill-header">
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-percentage">{skill.proficiency}%</span>
+                    </div>
+
+                    <div className="skill-bar-container">
+                      <div
+                        className="skill-bar"
+                        style={{
+                          width: `${skill.proficiency}%`,
+                          backgroundColor: skill.color || "var(--accentColor)",
+                        }}
                       >
-                        <div className="skill-header">
-                          <span className="skill-name">{skill.name}</span>
-                          <span className="skill-percentage">{skill.proficiency}%</span>
-                        </div>
-
-                        <div className="skill-bar-container">
-                          <div
-                            className="skill-bar"
-                            style={{
-                              width: `${skill.proficiency}%`,
-                              backgroundColor: skill.color || "var(--accentColor)",
-                            }}
-                          >
-                            <motion.div
-                              className="skill-bar-glow"
-                              animate={{
-                                opacity: [0.6, 1, 0.6],
-                              }}
-                              transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                              }}
-                            />
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                        <motion.div
+                          className="skill-bar-glow"
+                          animate={{
+                            opacity: [0.6, 1, 0.6],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </motion.div>
 
